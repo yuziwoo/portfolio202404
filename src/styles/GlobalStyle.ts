@@ -130,6 +130,19 @@ img {
 
 :root {
   font-size: ${theme.font.SIZE_BASIC};
+  --padding-default: 40px;
+}
+
+@media screen and (max-width: 1480px) {
+  :root {
+    --padding-default: 30px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  :root {
+    --padding-default: 16px;
+  }
 }
 `;
 

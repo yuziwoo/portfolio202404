@@ -34,6 +34,26 @@ const animation = {
     opacity: 0;
   }`,
 
+  FADE_RIGHT: keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }`,
+
+  FADE_LEFT: keyframes`
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }`,
+
   COME_UP: keyframes`
   0% {
     transform: translateY(100%);
@@ -78,6 +98,14 @@ const animation = {
   100% {
     transform: rotate(360deg);
   }`,
+
+  FLOATING: keyframes`
+  from {
+    transform: translateY(3%);
+  }
+  to {
+    transform: translateY(-3%);
+  }`
 };
 
 const lineHeight = {
@@ -94,7 +122,10 @@ const font = {
   SIZE_BASIC: '10px',
 };
 
-const padding = {};
+const padding = {
+  DEFAULT: 'var(--padding-default)',
+  BODY: '0 var(--padding-default)',
+};
 
 const transition = {
   EASE_IN: 'cubic-bezier(0.16, 0.84, 0.44, 1)',
