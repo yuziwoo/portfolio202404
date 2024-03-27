@@ -35,6 +35,16 @@ const animation = {
     opacity: 0;
   }`,
 
+  FADE_UP: keyframes`
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }`,
+
   FADE_RIGHT: keyframes`
   0% {
     transform: translateX(-100%);

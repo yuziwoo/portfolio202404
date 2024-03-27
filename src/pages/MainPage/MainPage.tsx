@@ -4,6 +4,7 @@ import MainBackground from '../../components/main/MainBackground/MainBackground'
 import { useEffect, useState } from 'react';
 import { elementClassName } from '../../constants/elementClassName';
 import MainLoader from '../../components/main/MainLoader/MainLoader';
+import MainTitleLineText from '../../components/main/MainTitleLineText/MainTitleLineText';
 
 const MainPage = () => {
   // className을 elementClassName.BACKGROUND_TRIGGER로 지정하면 해당 태그를 지나가면서 배경의 색을 바꿉니다.
@@ -23,6 +24,12 @@ const MainPage = () => {
         }
       }
     };
+
+    document.documentElement.scrollTo(0, 0);
+    setTimeout(() => {
+      document.documentElement.scrollTo(0, 0);
+    }, 1600);
+
     window.addEventListener('scroll', changeBackgroundIndex);
 
     return () => {
@@ -33,9 +40,11 @@ const MainPage = () => {
     <S.Page>
       <MainLoader />
       <MainBackground index={backgroundIndex} />
-      <div className={elementClassName.BACKGROUND_TRIGGER}>
+      <div className={elementClassName.BACKGROUND_TRIGGER} style={{ position: 'relative' }}>
         <MainBanner />
+        <MainTitleLineText />
       </div>
+
       <div className={elementClassName.BACKGROUND_TRIGGER} style={{ height: '1000px' }}></div>
       <div className={elementClassName.BACKGROUND_TRIGGER} style={{ height: '1001px' }}></div>
     </S.Page>
