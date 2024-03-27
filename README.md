@@ -1,5 +1,5 @@
 <p align="middle" >
-  <img width="200px;" src="https://github.com/yuziwoo/29cm-mob-clone/blob/main/public/img/system/readme/readme-title.jpg?raw=true"/>
+  <img width="200px;" src="https://github.com/yuziwoo/portfolio202404/blob/main/public/img/system/readme/readme-title.jpg?raw=true"/>
 </p>
 
 <h1 align="middle">포트폴리오 2024.04</h1>
