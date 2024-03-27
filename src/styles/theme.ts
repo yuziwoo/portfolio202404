@@ -16,6 +16,7 @@ const zIndex = {
   HEADER: 1000,
   FOOTER: 1000,
   MODAL: 2000,
+  LOADER: 3000,
 };
 
 const animation = {

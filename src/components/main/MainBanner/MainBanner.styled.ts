@@ -44,7 +44,7 @@ const TextGraphic = styled.div`
     width: 100%;
     transform-origin: center bottom;
     transform: translateY(160%) skew(10deg, 10deg);
-    animation: ${animationTextUp} 1.4s 0.25s 1 forwards ${theme.transition.EASE_OUT};
+    animation: ${animationTextUp} 1.4s 2.25s 1 forwards ${theme.transition.EASE_OUT};
   }
 
   @media screen and (max-width: 860px) {
@@ -85,7 +85,7 @@ const IntroTextWrap = styled.div`
   padding-top: 20px;
   transform: translateX(-100%);
   opacity: 0;
-  animation: ${theme.animation.FADE_RIGHT} 1.4s 0.25s 1 forwards ${theme.transition.EASE_OUT};
+  animation: ${theme.animation.FADE_RIGHT} 1.4s 2.25s 1 forwards ${theme.transition.EASE_OUT};
 
   @media screen and (max-width: 1480px) {
     padding-top: 10px;
@@ -215,7 +215,7 @@ const TextEngineer = styled.div`
     width: 100%;
     transform-origin: center bottom;
     transform: translateY(160%) skew(10deg, 10deg);
-    animation: ${animationTextUp} 1.4s 0.5s 1 forwards ${theme.transition.EASE_OUT};
+    animation: ${animationTextUp} 1.4s 2.5s 1 forwards ${theme.transition.EASE_OUT};
   }
 
   @media screen and (max-width: 860px) {
@@ -229,7 +229,7 @@ const TextDesicription = styled.p`
   text-align: right;
   transform: translateX(100%);
   opacity: 0;
-  animation: ${theme.animation.FADE_LEFT} 1.4s 0.5s 1 forwards ${theme.transition.EASE_OUT};
+  animation: ${theme.animation.FADE_LEFT} 1.4s 2.5s 1 forwards ${theme.transition.EASE_OUT};
 
   @media screen and (max-width: 1480px) {
     padding-bottom: 10px;
@@ -263,13 +263,13 @@ const Object1 = styled.div`
   right: 1.71875%;
   transition: transform 0.3s ${theme.transition.EASE_OUT};
   opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 0.3s 1 forwards ${theme.transition.EASE_INOUT};
+  animation: ${theme.animation.FADE_IN} 0.8s 2.3s 1 forwards ${theme.transition.EASE_INOUT};
 
   & img {
     display: block;
     width: 100%;
     transform: translateY(3%) rotate(5deg);
-    animation: ${objectFloating} 3s 1s infinite alternate ${theme.transition.EASE_OUT};
+    animation: ${objectFloating} 3s 3s infinite alternate ${theme.transition.EASE_OUT};
   }
 
   @media screen and (max-width: 1680px) {
@@ -304,7 +304,7 @@ const Object2 = styled.div`
   bottom: 3vw;
   transition: transform 0.3s ${theme.transition.EASE_OUT};
   opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 0.3s 1 forwards ${theme.transition.EASE_INOUT};
+  animation: ${theme.animation.FADE_IN} 0.8s 2.3s 1 forwards ${theme.transition.EASE_INOUT};
 
   & img {
     display: block;
@@ -373,7 +373,7 @@ const Selfie = styled.div`
   transform: rotate(-11deg);
   transition: transform 0.3s;
   opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 0.5s 1 forwards ${theme.transition.EASE_INOUT};
+  animation: ${theme.animation.FADE_IN} 0.8s 2.5s 1 forwards ${theme.transition.EASE_INOUT};
 `;
 
 const SelfieImg = styled.img<{ $isActive: boolean }>`
