@@ -1,9 +1,10 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { theme } from '../../../styles/theme';
 
 const Component = styled.div`
   width: 100%;
   padding: 200px ${theme.padding.DEFAULT};
+  position: relative;
 
   @media screen and (max-width: 860px) {
     padding: 80px ${theme.padding.DEFAULT};
@@ -14,40 +15,26 @@ const Titles = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${theme.color.BLACK};
-  padding-bottom: 10px;
+  overflow: hidden;
 `;
-
-const titleAnimation1 = keyframes`
-from {
-  opacity: 0;
-  transform: translateY(15px) skew(10deg, 10deg);
-}
-to {
-  opacity: 1;
-  transform: translateY(0) skew(0, 0);
-}`;
 
 const Title = styled.h4<{ $isActive: boolean }>`
   font-size: 22px;
   font-weight: 500;
   color: ${theme.color.BLACK};
   line-height: 1.2;
-  opacity: 0;
-  animation-name: ${({ $isActive }) => ($isActive ? titleAnimation1 : '')};
-  animation-iteration-count: 1;
-  animation-duration: 0.85s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ${theme.transition.EASE_INOUT};
+  transform: ${({ $isActive }) =>
+    $isActive ? 'translateY(0) skew(0, 0)' : 'translateY(150%) skew(10deg, 10deg)'};
+  transition: transform 0.85s ${theme.transition.EASE_INOUT};
 
   &:nth-child(2) {
-    animation-delay: 0.12s;
+    transition-delay: 0.12s;
   }
   &:nth-child(3) {
-    animation-delay: 0.24s;
+    transition-delay: 0.24s;
   }
   &:nth-child(4) {
-    animation-delay: 0.36s;
+    transition-delay: 0.36s;
   }
 
   @media screen and (max-width: 1480px) {
@@ -74,12 +61,27 @@ const Title = styled.h4<{ $isActive: boolean }>`
   }
 `;
 
-const Text = styled.p`
+const Line = styled.div<{ $isActive: boolean }>`
+  width: 100%;
+  height: 1px;
+  background: ${theme.color.BLACK};
+  margin-top: 10px;
+  transform: scaleX(${({ $isActive }) => ($isActive ? 1 : 0.5)});
+  transition: transform 0.4s ${theme.transition.EASE_INOUT};
+`;
+
+const Text = styled.p<{ $isActive: boolean }>`
   font-size: 22px;
   padding-top: 20px;
   font-weight: 400;
   color: ${theme.color.BLACK};
   line-height: 1.2;
+  transition: opacity 0.85s ${theme.transition.EASE_INOUT};
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
+
+  &:last-child {
+    transition-delay: 0.12s;
+  }
 
   @media screen and (max-width: 1480px) {
     font-size: 20px;
@@ -104,5 +106,6 @@ export const ComponentStyle = {
   Component,
   Titles,
   Title,
+  Line,
   Text,
 };

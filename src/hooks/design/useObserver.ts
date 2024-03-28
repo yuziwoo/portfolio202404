@@ -3,6 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 export const useObserver = (ref: React.MutableRefObject<HTMLDivElement | null>) => {
   /**
    * 스크롤에 반응하는 옵저버를 적용하여 0~1 스크롤된 비율를 전달합니다.
+   *
+   * @return
+   * ratio : 화면에 요소가 보여지고 있는 height 비율 (0 ~ 1)
+   * viewHeight : 화면에 요소가 보여지고 있는 height (px)
+   * isDisappearing : 요소의 top이 0보다 작아서 화면에서 사라지고 있는 경우 true를 반환 
    */
 
   const [isObserving, setIsObserving] = useState(false);

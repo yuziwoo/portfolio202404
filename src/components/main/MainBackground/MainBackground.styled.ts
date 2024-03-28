@@ -18,7 +18,7 @@ const Index1 = styled.div<{ $isActive: boolean }>`
   top: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.8s;
+  transition: opacity 0.3s;
   opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
   background: ${theme.color.WHITE};
 `;
@@ -29,7 +29,7 @@ const Index2 = styled.div<{ $isActive: boolean }>`
   top: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 0.8s;
+  transition: opacity 0.3s;
   opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
   background: ${theme.color.BLACK};
 `;

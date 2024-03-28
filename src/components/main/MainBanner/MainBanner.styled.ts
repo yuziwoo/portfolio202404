@@ -35,7 +35,7 @@ to {
 }`;
 
 const TextGraphic = styled.div`
-  width: 68.1%;
+  width: 58.1%;
   display: block;
   overflow: hidden;
 
@@ -206,7 +206,7 @@ const TextBottom = styled.div`
 `;
 
 const TextEngineer = styled.div`
-  width: 75.7%;
+  width: 65.7%;
   display: block;
   overflow: hidden;
 
@@ -346,13 +346,13 @@ const SelfieWrap = styled.div`
   z-index: 5;
 
   @media screen and (max-width: 1680px) {
-    width: 26%;
+    width: 24%;
   }
   @media screen and (max-width: 1360px) {
-    width: 32%;
+    width: 28%;
   }
   @media screen and (max-width: 1140px) {
-    width: 38%;
+    width: 34%;
   }
 
   @media screen and (max-width: 860px) {
