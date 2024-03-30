@@ -45,7 +45,6 @@ const Title = styled.h4<{ $isActive: boolean }>`
   }
   @media screen and (max-width: 860px) {
     font-size: 16px;
-    font-weight: 600;
   }
   @media screen and (max-width: 680px) {
     font-size: 14px;
@@ -93,7 +92,7 @@ const Text = styled.p<{ $isActive: boolean }>`
   }
   @media screen and (max-width: 860px) {
     font-size: 16px;
-    padding-top: 20px;
+    padding-top: 10px;
     font-weight: 500;
     line-height: 1.4;
   }
