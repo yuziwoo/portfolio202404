@@ -1,1 +1,3 @@
-export const elementClassName = {} as const;
+export const elementClassName = {
+  BACKGROUND: 'background-color-changer',
+} as const;

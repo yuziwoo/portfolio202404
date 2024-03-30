@@ -159,6 +159,12 @@ body {
     --padding-default: 16px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  :root {
+    --padding-default: 12px;
+  }
+}
 `;
 
 export default GlobalStyle;
