@@ -1,3 +1,1 @@
-export const elementClassName = {
-  BACKGROUND_TRIGGER: 'background-trigger',
-} as const;
+export const elementClassName = {} as const;

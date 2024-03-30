@@ -2,413 +2,260 @@ import { theme } from './../../../styles/theme';
 import styled, { css, keyframes } from 'styled-components';
 
 const Component = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   position: relative;
-  padding: ${theme.padding.DEFAULT} ${theme.padding.DEFAULT} 0 ${theme.padding.DEFAULT};
+  padding: 0 ${theme.padding.DEFAULT};
 `;
 
-const TextWrap = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
+const ThreeText = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-`;
-
-const TextTop = styled.div`
+  align-items: center;
+  padding: 30px 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
-
-const animationTextUp = keyframes`
-from {
-  transform: translateY(160%) skew(10deg, 10deg);
-}
-to {
-  transform: translateY(0) skew(0, 0);
-}`;
-
-const TextGraphic = styled.div`
-  width: 58.1%;
-  display: block;
-  overflow: hidden;
-
-  & img {
-    display: block;
-    width: 100%;
-    transform-origin: center bottom;
-    transform: translateY(160%) skew(10deg, 10deg);
-    animation: ${animationTextUp} 1.4s 2.25s 1 forwards ${theme.transition.EASE_OUT};
-  }
-
-  @media screen and (max-width: 860px) {
-    width: 80%;
-  }
-`;
-
-const introFont = css`
-  font-size: 22px;
-  line-height: 1.2;
-  padding: 3px 0;
-  font-weight: 500;
+  position: relative;
+  transform: translateY(-100%);
+  animation: ${theme.animation.COME_DOWN} 0.85s 1.2s 1 forwards ${theme.transition.EASE_INOUT};
 
   @media screen and (max-width: 1480px) {
-    font-size: 20px;
-    padding: 2px 0;
+    padding: 20px 0;
+  }
+`;
+
+const ThreeTextText = styled.p`
+  font-size: 18px;
+  font-style: oblique;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+
+  &:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 0;
   }
 
-  @media screen and (max-width: 1080px) {
-    font-size: 16px;
-    padding: 1px 0;
-  }
-
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1480px) {
     font-size: 14px;
   }
-  
-  @media screen and (max-width: 680px) {
+  @media screen and (max-width: 1080px) {
     font-size: 12px;
   }
 
-  @media screen and (max-width: 500px) {
-    font-size: 10px;
-  }
-`;
-
-const IntroTextWrap = styled.div`
-  padding-top: 20px;
-  transform: translateX(-100%);
-  opacity: 0;
-  animation: ${theme.animation.FADE_RIGHT} 1.4s 2.25s 1 forwards ${theme.transition.EASE_OUT};
-
-  @media screen and (max-width: 1480px) {
-    padding-top: 10px;
-  }
-
-  @media screen and (max-width: 1080px) {
-    padding-top: 5px;
-  }
-`;
-
-const IntroText1 = styled.p`
-  ${introFont}
-`;
-
-const IntroText2 = styled.p`
-  ${introFont};
-
-  & span {
-    text-indent: 20px;
-    display: inline-block;
-    ${introFont};
-    padding: 0;
-  }
-
-  @media screen and (max-width: 1080px) {
-    & span {
-      text-indent 12px;
+  @media screen and (max-width: 400px) {
+    &:nth-child(2) {
+      position: relative;
+      text-algin: right;
+      width: auto;
+    }
+    &:nth-child(3) {
+      display: none;
     }
   }
 `;
 
-const IntroText3Wrap = styled.div`
+const headingFont = css`
+  display: inline-block;
+  font-size: 20rem;
+  line-height: 1;
+  font-weight: 500;
+  overflow: hidden;
+
+  @media screen and (max-width: 860px) {
+    font-size: 23rem;
+  }
+
+  @media screen and (max-width: 280px) {
+    font-size: 20rem;
+  }
+`;
+
+const HeadingWEB = styled.h1`
+  ${headingFont};
+  font-family: ${theme.font.FAMILY_PLAYFAIR_DISPLAY};
+`;
+
+const HeadingGRAHIC = styled.h1`
+  ${headingFont};
+  font-size: 18.5rem;
+  padding-left: 4rem;
+
+  @media screen and (max-width: 860px) {
+    font-size: 21.5rem;
+  }
+
+  @media screen and (max-width: 280px) {
+    font-size: 18.5rem;
+  }
+`;
+
+const HeadingENGINEER = styled.h1`
+  ${headingFont};
+  font-size: 18.5rem;
+  padding-right: 2rem;
+
+  & span {
+    padding-right: 1.4rem;
+    text-indent: -1.2rem;
+  }
+
+  @media screen and (max-width: 860px) {
+    & span {
+      padding-right: 1.6rem;
+      text-indent: -1.4rem;
+    }
+  }
+`;
+
+const HeadingWrap1 = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+
+  @media screen and (max-width: 860px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const smallTextStyle = css`
+  font-size: 16px;
+  font-weight: 500;
+  font-style: oblique;
+  line-height: 1.2;
+  opacity: 0;
+  animation: ${theme.animation.FADE_IN} 0.65s 1.2s 1 forwards ${theme.transition.EASE_INOUT};
+
+  @media screen and (max-width: 1480px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1080px) {
+    font-size: 12px;
+  }
+`;
+
+const SmallText1 = styled.p`
+  ${smallTextStyle};
+  padding-bottom: 2.2rem;
+
+  @media screen and (max-width: 860px) {
+    padding-bottom: 0;
+  }
+`;
+
+const SmallText2 = styled.p`
+  ${smallTextStyle};
+  margin-top: 17rem;
+  text-align: right;
+
+  @media screen and (max-width: 860px) {
+    margin-top: 60rem;
+  }
+`;
+
+const HeadingWrap2 = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+`;
+
+const blueObjectAnimation = keyframes`
+from {
+  transform: translateX(-100%) scale(1.2)
+}
+to {
+  transform: translateX(0) scale(1);
+}
+`;
+
+const ImgBlueObject = styled.div<{ $isActive: boolean }>`
+  height: 16rem;
+  padding-bottom: 1.8rem;
+  margin-right: 4rem;
+  overflow: hidden;
+
+  & img {
+    display: block;
+    height: 100%;
+    transform-origin: right bottom;
+    transform: translateX(-100%) scale(1.2);
+    animation: ${blueObjectAnimation} 0.85s 1.2s 1 forwards ${theme.transition.EASE_INOUT};
+  }
+
+  @media screen and (max-width: 860px) {
+    height: 18.5rem;
+  }
+
+  @media screen and (max-width: 280px) {
+    height: 16rem;
+  }
+`;
+
+const HeadingNEATLY = styled.h1`
+  ${headingFont};
+  font-family: ${theme.font.FAMILY_PLAYFAIR_DISPLAY};
+`;
+
+const HeadingWrap3 = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-`;
-
-const IntroText3 = styled.p`
-  ${introFont};
-  text-align: right;
-`;
-
-const animationArrow = keyframes`
-0%, 50% {
-  transform: translateX(-80%);
-}
-90%, 100% {
-  transform: translateX(0);
-}`;
-
-const Arrow = styled.div`
-  width: 133px;
-  height: 2px;
-  border-radius: 1px;
-  background: ${theme.color.BLACK};
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(-80%);
-  animation: ${animationArrow} 3s infinite alternate ${theme.transition.EASE_INOUT};
-
-  &::before,
-  &::after {
-    display: block;
-    content: '';
-    background: ${theme.color.BLACK};
-    width: 12px;
-    height: 2px;
-    border-radius: 1px;
-    position: absolute;
-    right: 1px;
-    transform-origin: right center;
-    transform: rotate(-45deg);
-  }
-
-  &::after {
-    transform: rotate(45deg);
-  }
-
-  @media screen and (max-width: 1480px) {
-    width: 118px;
-  }
-
-  @media screen and (max-width: 1080px) {
-    width: 86px;
-
-    &::before,
-    &::after {
-      width: 8px;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    width: 54px;
-    height: 1px;
-
-    &::before,
-    &::after {
-      width: 4px;
-      height: 1px;
-    }
-  }
-`;
-
-const IntroText4 = styled.p`
-  ${introFont};
-  text-align: right;
-`;
-
-const TextBottom = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-bottom: ${theme.padding.DEFAULT};
-`;
-
-const TextEngineer = styled.div`
-  width: 65.7%;
-  display: block;
-  overflow: hidden;
-
-  & img {
-    display: block;
-    width: 100%;
-    transform-origin: center bottom;
-    transform: translateY(160%) skew(10deg, 10deg);
-    animation: ${animationTextUp} 1.4s 2.5s 1 forwards ${theme.transition.EASE_OUT};
-  }
 
   @media screen and (max-width: 860px) {
-    width: 97%;
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
 `;
 
-const TextDesicription = styled.p`
-  ${introFont};
-  padding-bottom: 20px;
-  text-align: right;
-  transform: translateX(100%);
-  opacity: 0;
-  animation: ${theme.animation.FADE_LEFT} 1.4s 2.5s 1 forwards ${theme.transition.EASE_OUT};
-
-  @media screen and (max-width: 1480px) {
-    padding-bottom: 10px;
-  }
-  @media screen and (max-width: 1080px) {
-    padding-bottom: 5px;
+const HeadingWrap3_1 = styled.div`
+  @media screen and (max-width: 860px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 `;
 
-const ObjectWrap = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1;
-`;
-
-const objectFloating = keyframes`
-from {
-  transform: translateY(3%) rotate(5deg);
-}
-to {
-  transform: translateY(-3%) rotate(-5deg);
-}`;
-
-const Object1 = styled.div`
-  position: absolute;
-  width: 20.1%;
-  top: 2vw;
-  right: 1.71875%;
-  transition: transform 0.3s ${theme.transition.EASE_OUT};
-  opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 2.3s 1 forwards ${theme.transition.EASE_INOUT};
-
-  & img {
-    display: block;
-    width: 100%;
-    transform: translateY(3%) rotate(5deg);
-    animation: ${objectFloating} 3s 3s infinite alternate ${theme.transition.EASE_OUT};
-  }
-
-  @media screen and (max-width: 1680px) {
-    width: 25%;
-    right: -1%;
-    top: 3vw;
-  }
-
-  @media screen and (max-width: 1480px) {
-    width: 30%;
-    right: -4%;
-    top: 2.5vw;
-  }
-
-  @media screen and (max-width: 1180px) {
-    width: 36%;
-    right: -7%;
-    top: 2vw;
-  }
+const HeadingDESIGNED = styled.h1`
+  ${headingFont};
+  font-family: ${theme.font.FAMILY_PLAYFAIR_DISPLAY};
+  padding-right: 4rem;
 
   @media screen and (max-width: 860px) {
-    width: 40%;
-    right: -15%;
-    top: 12vw;
+    text-align: right;
   }
 `;
 
-const Object2 = styled.div`
-  position: absolute;
-  width: 21.875%;
-  left: -4.583%;
-  bottom: 3vw;
-  transition: transform 0.3s ${theme.transition.EASE_OUT};
-  opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 2.3s 1 forwards ${theme.transition.EASE_INOUT};
-
-  & img {
-    display: block;
-    width: 100%;
-    animation: ${objectFloating} 3s infinite alternate ${theme.transition.EASE_OUT};
-  }
-
-  @media screen and (max-width: 1680px) {
-    width: 26%;
-    left: -8%;
-    bottom: 5vw;
-  }
-
-  @media screen and (max-width: 1480px) {
-    width: 34%;
-    left: -14%;
-    bottom: 2vw;
-  }
-
-  @media screen and (max-width: 1140px) {
-    width: 40%;
-    left: -18%;
-    bottom: 1vw;
-  }
+const IconLight = styled.img`
+  width: 10rem;
+  animation: ${theme.animation.BLINK} 1.5s infinite alternate;
 
   @media screen and (max-width: 860px) {
-    width: 44%;
-    left: -18%;
-    bottom: 5vw;
-  }
-`;
-
-const SelfieWrap = styled.div`
-  width: 20%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  z-index: 5;
-
-  @media screen and (max-width: 1680px) {
-    width: 24%;
-  }
-  @media screen and (max-width: 1360px) {
-    width: 28%;
-  }
-  @media screen and (max-width: 1140px) {
-    width: 34%;
-  }
-
-  @media screen and (max-width: 860px) {
-    width: 50%;
-  }
-  @media screen and (max-width: 680px) {
-    width: 60%;
-  }
-  @media screen and (max-width: 500px) {
-    width: 65%;
-  }
-`;
-
-const Selfie = styled.div`
-  width: 100%;
-  overflow: hidden;
-  border-radius: 20px;
-  transform: rotate(-11deg);
-  transition: transform 0.3s;
-  opacity: 0;
-  animation: ${theme.animation.FADE_IN} 0.8s 2.5s 1 forwards ${theme.transition.EASE_INOUT};
-`;
-
-const SelfieImg = styled.img<{ $isActive: boolean }>`
-  display: block;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
-  animation: ${theme.animation.ZOOM_IN} 10s infinite alternate;
-
-  &:first-child {
-    position: relative;
+    padding-top: 10px;
+    width: 20rem;
+    display: none;
   }
 `;
 
 export const ComponentStyle = {
   Component,
-  TextWrap,
-  TextTop,
-  TextGraphic,
-  IntroTextWrap,
-  IntroText1,
-  IntroText2,
-  IntroText3Wrap,
-  IntroText3,
-  Arrow,
-  IntroText4,
-  TextBottom,
-  TextEngineer,
-  TextDesicription,
-  ObjectWrap,
-  Object1,
-  Object2,
-  SelfieWrap,
-  Selfie,
-  SelfieImg,
+  ThreeText,
+  ThreeTextText,
+  HeadingWEB,
+  HeadingGRAHIC,
+  HeadingENGINEER,
+  HeadingWrap1,
+  SmallText1,
+  SmallText2,
+  HeadingWrap2,
+  ImgBlueObject,
+  HeadingNEATLY,
+  HeadingWrap3,
+  HeadingWrap3_1,
+  HeadingDESIGNED,
+  IconLight,
 };

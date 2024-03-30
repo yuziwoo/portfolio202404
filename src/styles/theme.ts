@@ -1,10 +1,11 @@
 import { keyframes } from 'styled-components';
 
 const color = {
-  BLACK: '#000',
+  BLACK: '#0A0C1F',
   WHITE: '#fff',
+  BACKGROUND: '#F3F3F3',
 
-  SELECTION_BG: '#4B4B4B',
+  SELECTION_BG: '#6CB6F1',
   SELECTION_COLOR: '#FFF',
 };
 
@@ -72,6 +73,20 @@ const animation = {
   100% {
     transform: translateY(0);
   }`,
+  COME_DOWN: keyframes`
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }`,
+  COME_RIGHT: keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }`,
   GO_DOWN: keyframes`
   0% {
     transform: translateY(0);
@@ -116,11 +131,19 @@ const animation = {
   }
   to {
     transform: translateY(-3%);
-  }`
+  }`,
+
+  BLINK: keyframes`
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }`,
 };
 
 const lineHeight = {
-  BASIC: 1.2,
+  BASIC: 1,
 
   NONE: 1,
   SHORT: 1.2,
@@ -129,8 +152,9 @@ const lineHeight = {
 
 const font = {
   FAMILY_INTER: `'Inter', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'sans-serif'`,
+  FAMILY_PLAYFAIR_DISPLAY: `"Playfair Display", -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'sans-serif'`,
 
-  SIZE_BASIC: '10px',
+  SIZE_BASIC: '0.520833vw', // width/font-size : 1920px/10px
 };
 
 const padding = {
