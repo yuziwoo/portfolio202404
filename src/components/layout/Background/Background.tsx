@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { ComponentStyle as S } from './Background.styled';
 import { elementClassName } from '../../../constants/elementClassName';
+import { theme } from '../../../styles/theme';
 
 const Background = () => {
   /**
    * 스크롤을 내리다가 ChangeBackground 컴포넌트를 마주치면 배경의 색이 바뀝니다.
    */
-  const BACKGROUND_COLORS = ['#FFF', '#000', '#FFF'];
+  const BACKGROUND_COLORS = ['#FFF', '#000', theme.color.BACKGROUND];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

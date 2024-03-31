@@ -195,6 +195,7 @@ const SkillWrap = styled.div`
   }
   @media screen and (max-width: 860px) {
     margin-top: 36rem;
+    display: none;
   }
 `;
 

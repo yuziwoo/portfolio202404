@@ -3,6 +3,7 @@ import MainBanner from '../../components/main/MainBanner/MainBanner';
 import ScrollHorizontalImg from '../../components/design/ScrollHorizontalImg/ScrollHorizontalImg';
 import AboutMe from '../../components/main/AboutMe/AboutMe';
 import ChangeBackground from '../../components/layout/Background/ChangeBackground/ChangeBackground';
+import Projects from '../../components/main/Projects/Projects';
 
 const MainPage = () => {
   return (
@@ -21,9 +22,7 @@ const MainPage = () => {
       </S.HorizontalImg>
 
       <AboutMe />
-
-      {/* <MainTitleLineText />
-      <MainPixelByPixel /> */}
+      <Projects />
     </S.Page>
   );
 };
