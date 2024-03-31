@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/yuziwoo.github.io/portfolio202404/static/js/main.429fd2fc.js",
+    "main.js": "/yuziwoo.github.io/portfolio202404/static/js/main.d19883e8.js",
     "index.html": "/yuziwoo.github.io/portfolio202404/index.html",
-    "main.429fd2fc.js.map": "/yuziwoo.github.io/portfolio202404/static/js/main.429fd2fc.js.map"
+    "main.d19883e8.js.map": "/yuziwoo.github.io/portfolio202404/static/js/main.d19883e8.js.map"
   },
   "entrypoints": [
-    "static/js/main.429fd2fc.js"
+    "static/js/main.d19883e8.js"
   ]
 }
