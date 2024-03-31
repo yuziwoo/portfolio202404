@@ -24,6 +24,7 @@ html, body {
 
 body {
   font-family: ${theme.font.FAMILY_INTER};
+  font-optical-sizing: auto;
   color: ${theme.color.BLACK};
   width: 100%;
   overflow-x: hidden;
@@ -125,11 +126,44 @@ img {
 
 *::selection {
   background-color: ${theme.color.SELECTION_BG};
-  color: white; ${theme.color.SELECTION_COLOR};
+  color: ${theme.color.SELECTION_COLOR};
+}
+
+body {
+  background: ${theme.color.BACKGROUND};
 }
 
 :root {
   font-size: ${theme.font.SIZE_BASIC};
+  font-variation-settings:
+    "slnt" -1;
+    // slant:  -10~0 / https://fonts.google.com/knowledge/glossary/slant_axis
+  color: ${theme.color.BLACK};
+  --padding-default: 40px;
+}
+
+@media screen and (max-width: 1480px) {
+  :root {
+    --padding-default: 30px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  :root {
+    --padding-default: 20px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  :root {
+    --padding-default: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --padding-default: 12px;
+  }
 }
 `;
 
