@@ -1,90 +1,54 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { theme } from '../../../styles/theme';
-
-const activeColor = '#FFF';
 
 const Component = styled.div`
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 ${theme.padding.DEFAULT};
-  margin-top: 10rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 8rem;
+  padding: 0 ${theme.padding.DEFAULT};
 
   & * {
     color: ${theme.color.WHITE};
   }
-
-  @media screen and (max-width: 1080px) {
-    flex-direction: column;
-    margin-top: 8rem;
-  }
 `;
 
-const SectionLeft = styled.div`
+const floating = keyframes`
+from {
+  transform: translateY(3%);
+}
+to {
+  transform: translateY(0%);
+}`;
+
+const BackgroundRing = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   display: block;
-  position: relative;
-  z-index: 1;
-  width: 42%;
+  animation: ${floating} 6s infinite alternate;
 
-  @media screen and (max-width: 1080px) {
+  & img {
     width: 100%;
+    display: block;
   }
-`;
 
-const SectionRight = styled.div`
-  width: 58%;
-  @media screen and (max-width: 1080px) {
-    width: 100%;
-  }
-`;
-
-const Flowers = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 4rem;
-
-  @media screen and (max-width: 1080px) {
-    width: 100%;
-    justify-content: space-between;
-    padding: 6rem;
-    transform: none !important;
-
-    &::after {
-      position: absolute;
-      left: 0;
-      bottom: 100%;
-      content: '';
-      background: #000;
-      display: block;
-      width: 100%;
-      height: 1000%;
-    }
-  }
-`;
-
-const IconFlower = styled.img`
-  display: block;
-  width: 7rem;
-  margin-right: 4rem;
-
-  @media screen and (max-width: 1080px) {
-    width: 10rem;
-    margin-right: 6rem;
+  @media screen and (max-width: 860px) {
+    opacity: 0.3;
   }
 `;
 
 const TitleWrap = styled.div`
-  display: block;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 
-  @media screen and (max-width: 1080px) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-top: 12rem;
+  @media screen and (max-width: 860px) {
+    margin-top: 40rem;
   }
 `;
 
@@ -92,24 +56,18 @@ const Title = styled.div`
   display: flex;
   justify-content: flex-start;
 
-  @media screen and (max-width: 1080px) {
-    &:nth-child(3) {
-      align-self: flex-end;
-      padding-top: 16rem;
-    }
+  &:nth-child(3) {
+    align-self: flex-end;
+    padding-top: 20rem;
   }
 `;
 
 const titleFont = css`
   display: inline-block;
-  font-size: 10rem;
+  font-size: 16rem;
   line-height: 1;
   font-weight: 500;
   overflow: hidden;
-
-  @media screen and (max-width: 1080px) {
-    font-size: 16rem;
-  }
 `;
 
 const HeadingEVERYTHING = styled.h1`
@@ -134,7 +92,6 @@ const HeadingIMAGINE = styled.h1`
   & span {
     padding: 0 1.2rem;
     text-indent: -1.6rem;
-    color: ${activeColor};
   }
 `;
 
@@ -164,93 +121,37 @@ const HeadingREALIZE = styled.h1`
   }
 `;
 
-const ContentWrap = styled.div`
-  padding-top: 14rem;
+const TextWrap = styled.div<{ $isActive: boolean }>`
+  width: 40rem;
+  margin-top: 8rem;
+  transition: opacity 0.85s ${theme.transition.EASE_OUT};
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0)};
 
-  @media screen and (max-width: 1080px) {
-    padding-top: 80px;
+  @media screen and (max-width: 860px) {
+    width: 60%;
+    margin-top: 10rem;
+    align-self: left;
   }
-`;
-
-const Content = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  @media screen and (max-width: 1080px) {
-    flex-direction: column;
-  }
-`;
-
-const ContentTitle = styled.h5`
-  width: 48rem;
-  font-size: 16px;
-  line-height: 1.4;
-  font-weight: 700;
-  transition: all 0.85s;
-  transform: translateY(15px);
-  opacity: 0;
-  color: ${activeColor};
-
-  .active & {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  @media screen and (max-width: 1080px) {
-    font-size: 18px;
-    width: auto;
-    position: relative;
-    display: inline-block;
-    transform: translateY(0);
-    opacity: 0;
-
-    .active & {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: calc(100% + 20px);
-      top: 50%;
-      transform: translateY(-0.5px);
-      background: ${theme.color.WHITE};
-      width: 100vw;
-      height: 1px;
-      font-size: 8px;
-    }
-  }
-`;
-
-const ContentValue = styled.div`
-  width: 48rem;
-
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 620px) {
     width: 100%;
-    padding-top: 30px;
+    margin-top: 40rem;
   }
 `;
 
-const ContentText = styled.p<{ $align?: string }>`
-  font-size: 16px;
+const textFont = css`
+  font-size: 18px;
   line-height: 1.4;
   font-weight: 400;
-  margin-top: 10px;
-  transition: all 0.85s 0.4s;
-  transform: translateY(15px);
-  opacity: 0;
+  text-align: left;
 
-  .active & {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1480px) {
     font-size: 16px;
-    text-align: ${({ $align }) => ($align ? $align : 'left')};
+  }
+  @media screen and (max-width: 1180px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1080px) {
+    font-size: 13px;
   }
 
   @media screen and (max-width: 860px) {
@@ -258,64 +159,80 @@ const ContentText = styled.p<{ $align?: string }>`
   }
 `;
 
-const ContentSubTitle = styled.h6<{ $align?: string }>`
-  font-size: 16px;
-  line-height: 1.4;
-  font-weight: 700;
-  font-style: oblique;
-  margin-top: 50px;
-  transition: all 0.85s 0.2s;
-  transform: translateY(15px);
-  opacity: 0;
-  color: #9f9f9f;
-
-  .active & {
-    transform: translateY(0);
-    opacity: 1;
+const Text1 = styled.p`
+  ${textFont};
+  text-indent: 80px;
+  @media screen and (max-width: 1480px) {
+    text-indent: 60px;
   }
+  @media screen and (max-width: 1180px) {
+    text-indent: 40px;
+  }
+  @media screen and (max-width: 1080px) {
+    text-indent: 30px;
+  }
+`;
+
+const Text2 = styled.p`
+  ${textFont};
+  padding-top: 4rem;
+  font-style: oblique;
+
+  @media screen and (max-width: 860px) {
+    padding-top: 8rem;
+  }
+`;
+
+const SkillWrap = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-top: 60rem;
+
+  @media screen and (max-width: 1080px) {
+    margin-top: 50rem;
+  }
+  @media screen and (max-width: 860px) {
+    margin-top: 36rem;
+  }
+`;
+
+const Skill = styled.p<{ $isActive: boolean }>`
+  font-size: 4.8rem;
+  font-weight: 400;
+  font-family: ${theme.font.FAMILY_PLAYFAIR_DISPLAY};
+  padding-left: 10rem;
+  transform: translateY(${({ $isActive }) => ($isActive ? '0' : '120%')});
+  transition: transform 0.85s ${theme.transition.EASE_OUT};
 
   &:first-child {
-    margin-top: 0;
+    padding-left: 0;
   }
 
-  & + ${ContentText} {
-    margin-top: 20px;
+  &:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  &:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    transition-delay: 0.45s;
+  }
+  &:nth-child(5) {
+    transition-delay: 0.6s;
   }
 
-  @media screen and (max-width: 1080px) {
-    font-size: 16px;
-    margin-top: 24px;
-    text-align: ${({ $align }) => ($align ? $align : 'left')};
-
-    &:first-child {
-      margin-top: 10px;
-    }
-
-    & + ${ContentText} {
-      margin-top: 16px;
-    }
-  }
-
-  @media screen and (max-width: 860px) {
-    font-size: 14px;
-  }
-`;
-
-const ContentLine = styled.div`
-  margin: 120px 0;
-
-  @media screen and (max-width: 1080px) {
-    margin: 80px 0;
+  @media screen and (max-width: 620px) {
+    font-size: 7.2rem;
+    padding-left: 4rem;
   }
 `;
 
 export const ComponentStyle = {
   Component,
-  SectionLeft,
-  SectionRight,
+  BackgroundRing,
   TitleWrap,
-  Flowers,
-  IconFlower,
   Title,
   HeadingEVERYTHING,
   HeadingYOU,
@@ -323,11 +240,9 @@ export const ComponentStyle = {
   HeadingFICTION,
   HeadingTO,
   HeadingREALIZE,
-  ContentWrap,
-  Content,
-  ContentTitle,
-  ContentValue,
-  ContentSubTitle,
-  ContentText,
-  ContentLine,
+  TextWrap,
+  Text1,
+  Text2,
+  SkillWrap,
+  Skill,
 };
