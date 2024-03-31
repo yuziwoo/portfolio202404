@@ -17,7 +17,7 @@ const AboutMe = () => {
   return (
     <S.Component ref={ref}>
       <S.BackgroundRing>
-        <img src={`${process.env.PUBLIC_URL}/img/content/main/3d-ring.png`} alt="2D 꽃 아이콘" />
+        <img src={`${process.env.PUBLIC_URL}/img/content/main/3d-ring.png`} alt="3D 오브젝트" />
       </S.BackgroundRing>
 
       <S.TitleWrap>

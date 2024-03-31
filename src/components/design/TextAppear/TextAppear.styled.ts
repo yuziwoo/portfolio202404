@@ -26,6 +26,9 @@ const Span = styled.span<{ $isActive: boolean }>`
   animation-timing-function: ${theme.transition.EASE_INOUT};
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  overflow: visible;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
 
   &:nth-child(2) {
     animation-delay: 0.08s;

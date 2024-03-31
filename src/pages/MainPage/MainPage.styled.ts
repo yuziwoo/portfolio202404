@@ -3,7 +3,6 @@ import { theme } from '../../styles/theme';
 
 const Page = styled.section`
   position: relative;
-  padding-bottom: 3000px;
 `;
 
 const HorizontalImg = styled.div`
@@ -14,7 +13,16 @@ const HorizontalImg = styled.div`
   position: relative;
 `;
 
+const HorizontalImg2 = styled.div`
+  padding: 0 ${theme.padding.DEFAULT};
+  margin-top: 32rem;
+  opacity: 0;
+  animation: ${theme.animation.FADE_UP} 0.8s 1.2s 1 forwards ${theme.transition.EASE_INOUT};
+  position: relative;
+`;
+
 export const PageStyle = {
   Page,
   HorizontalImg,
+  HorizontalImg2
 };

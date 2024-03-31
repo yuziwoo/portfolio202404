@@ -147,7 +147,7 @@ to {
 }`;
 
 const Title = styled.div`
-  margin-left: 20px;
+  padding: 0 20px;
   overflow: hidden;
   position: relative;
 
@@ -161,7 +161,7 @@ const Title = styled.div`
 
   & h1:last-child {
     position: absolute;
-    left: 0;
+    left: 20px;
     top: 100%;
   }
 
@@ -174,29 +174,41 @@ const Title = styled.div`
   }
 
   @media screen and (max-width: 1360px) {
-    margin-left: 16px;
+    padding: 0 16px;
 
     & h1 {
       font-size: 32px;
     }
+
+    & h1:last-child {
+      left: 16px;
+    }
   }
 
   @media screen and (max-width: 1000px) {
-    margin-left: 12px;
+    padding: 0 12px;
 
     & h1 {
       font-size: 24px;
     }
+
+    & h1:last-child {
+      left: 12px;
+    }
   }
 
   @media screen and (max-width: 860px) {
-    margin-left: 0;
+    padding: 0 0;
     margin-top: 20px;
     width: 100%;
     text-align: left;
 
     & h1 {
       font-size: 20px;
+    }
+
+    & h1:last-child {
+      left: 0px;
     }
   }
 `;

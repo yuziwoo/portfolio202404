@@ -55,6 +55,7 @@ const TitleWrap = styled.div`
 const Title = styled.div`
   display: flex;
   justify-content: flex-start;
+  transition: transform 0.6s ease-out;
 
   &:nth-child(3) {
     align-self: flex-end;
