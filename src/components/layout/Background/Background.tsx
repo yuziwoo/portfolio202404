@@ -23,6 +23,15 @@ const Background = () => {
     };
 
     setTimeout(changeColor, 300);
+    setTimeout(changeColor, 500);
+    setTimeout(changeColor, 700);
+    setTimeout(changeColor, 900);
+    setTimeout(changeColor, 1100);
+    setTimeout(changeColor, 1300);
+    setTimeout(changeColor, 1500);
+    setTimeout(changeColor, 1700);
+    setTimeout(changeColor, 1900);
+    setTimeout(changeColor, 2100);
     window.addEventListener('scroll', changeColor);
 
     return () => {
