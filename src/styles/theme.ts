@@ -1,8 +1,8 @@
 import { keyframes } from 'styled-components';
 
 const color = {
-  BLACK: '#0A0C1F',
-  WHITE: '#fff',
+  BLACK: '#000',
+  WHITE: '#FFF',
   BACKGROUND: '#F3F3F3',
 
   SELECTION_BG: '#6CB6F1',

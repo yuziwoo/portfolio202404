@@ -14,7 +14,7 @@ export const useScrollRatio = (ref: React.MutableRefObject<HTMLDivElement | null
     const getPosBottom = () => {
       const windowHeight = window.innerHeight;
       const top = element.getBoundingClientRect().top;
-      const bottom = element?.getBoundingClientRect().bottom;
+      const bottom = element.getBoundingClientRect().bottom;
       if (top > windowHeight || bottom < 0) return;
 
       const range = element.offsetHeight + window.innerHeight;

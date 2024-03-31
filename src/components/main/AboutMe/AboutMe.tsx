@@ -2,70 +2,82 @@ import { ComponentStyle as S } from './AboutMe.styled';
 import TextAppear from '../../design/TextAppear/TextAppear';
 import { useScrollPixel } from '../../../hooks/design/useScrollPixel';
 import { useRef } from 'react';
+import { useScrollTrigger } from '../../../hooks/design/useScrollTrigger';
 
 const AboutMe = () => {
   const ref = useRef<null | HTMLDivElement>(null);
-  const { pixel } = useScrollPixel(ref);
+  const { pixel, top } = useScrollPixel(ref);
+  const { isActive } = useScrollTrigger(ref);
+
+  const contentRef1 = useRef<null | HTMLDivElement>(null);
+  const { isActive: isContentActive1 } = useScrollTrigger(contentRef1);
+  const contentRef2 = useRef<null | HTMLDivElement>(null);
+  const { isActive: isContentActive2 } = useScrollTrigger(contentRef2);
 
   return (
     <S.Component ref={ref}>
       <S.SectionLeft>
-        <S.Flowers>
+        <S.Flowers style={{ transform: `translateY(${top * 1.2}px)` }}>
           <S.IconFlower
             src={`${process.env.PUBLIC_URL}/img/content/icon/icon-flower-w.svg`}
             alt="2D 꽃 아이콘"
+            style={{ transform: `rotate(${pixel / 4}deg)` }}
           />
           <S.IconFlower
             src={`${process.env.PUBLIC_URL}/img/content/icon/icon-flower-w.svg`}
             alt="2D 꽃 아이콘"
+            style={{ transform: `rotate(${pixel / 3}deg)` }}
           />
           <S.IconFlower
             src={`${process.env.PUBLIC_URL}/img/content/icon/icon-flower-w.svg`}
             alt="2D 꽃 아이콘"
+            style={{ transform: `rotate(${pixel / 2}deg)` }}
           />
           <S.IconFlower
             src={`${process.env.PUBLIC_URL}/img/content/icon/icon-flower-w.svg`}
             alt="2D 꽃 아이콘"
+            style={{ transform: `rotate(${pixel}deg)` }}
           />
           <S.IconFlower
             src={`${process.env.PUBLIC_URL}/img/content/icon/icon-flower-w.svg`}
             alt="2D 꽃 아이콘"
+            style={{ transform: `rotate(${pixel * 2}deg)` }}
           />
         </S.Flowers>
       </S.SectionLeft>
 
       <S.SectionRight>
         <S.TitleWrap>
-          <S.Title>
+          <S.Title style={{ transform: `translateX(${pixel / 20}px)` }}>
             <S.HeadingEVERYTHING>
-              <TextAppear text="EVERYTHING" isActive={true} />
+              <TextAppear text="EVERYTHING" isActive={isActive} />
             </S.HeadingEVERYTHING>
             <S.HeadingYOU>
-              <TextAppear text="YOU" isActive={true} />
+              <TextAppear text="YOU" isActive={isActive} />
             </S.HeadingYOU>
           </S.Title>
 
-          <S.Title>
+          <S.Title  style={{ transform: `translateX(${pixel / 10}px)` }}>
             <S.HeadingIMAGINE>
-              <TextAppear text="IMAGINE" isActive={true} />
+              <TextAppear text="IMAGINE," isActive={isActive} />
             </S.HeadingIMAGINE>
           </S.Title>
 
-          <S.Title>
+          <S.Title  style={{ transform: `translateX(-${pixel / 20}px)` }}>
             <S.HeadingFICTION>
-              <TextAppear text="FICTION" isActive={true} />
+              <TextAppear text="FICTION" isActive={isActive} />
             </S.HeadingFICTION>
             <S.HeadingTO>
-              <TextAppear text="To" isActive={true} />
+              <TextAppear text="TO" isActive={isActive} />
             </S.HeadingTO>
             <S.HeadingREALIZE>
-              <TextAppear text="REALIZE" isActive={true} />
+              <TextAppear text="REALIZE" isActive={isActive} />
             </S.HeadingREALIZE>
           </S.Title>
         </S.TitleWrap>
 
         <S.ContentWrap>
-          <S.Content>
+          <S.Content ref={contentRef1} className={`${isContentActive1 ? 'active' : ''}`}>
             <S.ContentTitle>(01) WHAT I DO</S.ContentTitle>
             <S.ContentValue>
               <S.ContentSubTitle>I AM WEB GRAPHIC ENGINEER</S.ContentSubTitle>
@@ -100,7 +112,7 @@ const AboutMe = () => {
 
           <S.ContentLine />
 
-          <S.Content>
+          <S.Content ref={contentRef2} className={`${isContentActive2 ? 'active' : ''}`}>
             <S.ContentTitle>(02) DEVELOPMENT SKILLS</S.ContentTitle>
             <S.ContentValue>
               <S.ContentSubTitle>FRONTEND</S.ContentSubTitle>
@@ -128,7 +140,6 @@ const AboutMe = () => {
             </S.ContentValue>
           </S.Content>
         </S.ContentWrap>
-        {pixel}
       </S.SectionRight>
     </S.Component>
   );

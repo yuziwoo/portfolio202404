@@ -5,6 +5,7 @@ export const useScrollPixel = (ref: React.MutableRefObject<HTMLDivElement | null
    * 요소가 화면에서 사라지는 순간부터 몇 pixel이 스크롤 되었는지 반환합니다.
    */
 
+  const [top, setTop] = useState(0);
   const [pixel, setPixel] = useState(0);
 
   useEffect(() => {
@@ -13,9 +14,13 @@ export const useScrollPixel = (ref: React.MutableRefObject<HTMLDivElement | null
 
     const getScrollPixel = () => {
       const top = element.getBoundingClientRect().top;
-      if (top > 0) return;
+      const bottom = element.getBoundingClientRect().bottom;
+      if (top > window.innerHeight || bottom < 0) return;
+      setPixel(window.innerHeight - top);
 
-      setPixel(-top);
+      if (top < 0) {
+        setTop(-top);
+      }
     };
 
     window.addEventListener('scroll', getScrollPixel);
@@ -25,5 +30,5 @@ export const useScrollPixel = (ref: React.MutableRefObject<HTMLDivElement | null
     };
   }, [ref]);
 
-  return { pixel };
+  return { top, pixel };
 };
