@@ -3,6 +3,8 @@ import { theme } from '../../styles/theme';
 
 const Page = styled.section`
   position: relative;
+  width: 100%;
+  overflow: hidden;
 `;
 
 const HorizontalImg = styled.div`
