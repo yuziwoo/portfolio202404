@@ -5,7 +5,7 @@
 <h1 align="middle">포트폴리오 2024.04</h1>
 
 <p align="middle">2024년 4월 포트폴리오</p>
-<p align="middle"><a href="https://yuziwoo.github.io/portfolio202404/" target="_blank">포트폴리오 보러가기</a></p>
+<p align="middle"><a href="https://portfolio240401.netlify.app/" target="_blank">포트폴리오 보러가기</a></p>
 
 ## 🚀 기술 스택
 
