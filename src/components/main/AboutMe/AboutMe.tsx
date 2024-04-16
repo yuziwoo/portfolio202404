@@ -73,9 +73,9 @@ const AboutMe = () => {
       <S.SkillWrap ref={contentRef2}>
         <S.Skill $isActive={isContentActive2}>REACT</S.Skill>
         <S.Skill $isActive={isContentActive2}>NEXT.JS</S.Skill>
+        <S.Skill $isActive={isContentActive2}>VUE</S.Skill>
         <S.Skill $isActive={isContentActive2}>TYPESCRIPT</S.Skill>
         <S.Skill $isActive={isContentActive2}>JAVASCRIPT</S.Skill>
-        <S.Skill $isActive={isContentActive2}>CANVAS</S.Skill>
       </S.SkillWrap>
     </S.Component>
   );
