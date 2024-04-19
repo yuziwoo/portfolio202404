@@ -43,7 +43,7 @@ const Projects = () => {
               <S.Num>{num}</S.Num>
               <S.Date>{date}</S.Date>
             </S.NumAndDate>
-            <S.Title>
+            <S.Title href={website} target="_blank">
               <h1>{title}</h1>
               <h1>{title}</h1>
             </S.Title>

@@ -146,10 +146,12 @@ to {
   opacity: 1;
 }`;
 
-const Title = styled.div`
+const Title = styled.a`
   padding: 0 20px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
+  display: block;
 
   & h1 {
     font-size: 48px;
@@ -255,13 +257,10 @@ const Anchor = styled.a`
   }
 
   @media screen and (max-width: 1360px) {
+    margin-left: 24px;
+
     & p {
       font-size: 16px;
-      margin-left: 24px;
-    }
-
-    & p:first-child {
-      margin-left: 0;
     }
   }
   @media screen and (max-width: 1000px) {
