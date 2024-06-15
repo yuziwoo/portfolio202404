@@ -51,22 +51,23 @@ const AboutMe = () => {
 
       <S.TextWrap ref={contentRef1} $isActive={isContentActive1}>
         <S.Text1>
-          웹사이트를 깔끔하고 세련되게 담아내어 브랜드를 가장 브랜드답게 표현해 드립니다. 브랜드에
-          어울리는 트렌디한 디자인을 만들고, 자연스러운 모션을 입혀 웹사이트를 만들어 드립니다.
+          여러 사람들이 협업하여 하나의 어플리케이션을 개발하는 공동체 안에서 함께하기 위해 항상
+          책임감과 겸손함을 우선으로 지키려고 노력하고 있습니다. 더 꼼꼼하게 이슈를 기록하고, 맡은
+          일에 책임을 다하는 개발자가 되겠습니다.
         </S.Text1>
         <S.Text2>
-          - WEB PUBLISHING (⭐️)
-          <br />
-          - FRONT-END DEVELOPMENT
+          - FRONT-END DEVELOPMENT (⭐️)
           <br />
           - INTERACTIVE DEVELOPMENT
+          <br />
+          - WEB PUBLISHING
           <br />
           - WEB ACCESSIBILITY
           <br />
           - UI/UX STRATEGY
           <br />
           - WEB DESIGN
-          <br />- BACKEND SERVICE BASIC
+          <br />- BAAS
         </S.Text2>
       </S.TextWrap>
 

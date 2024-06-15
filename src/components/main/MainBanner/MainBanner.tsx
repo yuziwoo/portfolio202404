@@ -6,7 +6,7 @@ const MainBanner = () => {
     <S.Component>
       <S.ThreeText>
         <S.ThreeTextText>YUZIWOO</S.ThreeTextText>
-        <S.ThreeTextText>WEB GRAPHIC ENGINEER</S.ThreeTextText>
+        <S.ThreeTextText>FRONTEND DEVELOPER</S.ThreeTextText>
         <S.ThreeTextText>INTERACTIVE</S.ThreeTextText>
       </S.ThreeText>
 
@@ -14,12 +14,12 @@ const MainBanner = () => {
         <TextAppear text="WEB" isActive={true} />
       </S.HeadingWEB>
       <S.HeadingGRAHIC>
-        <TextAppear text="GRAPHIC" isActive={true} />
+        <TextAppear text="FRONTEND" isActive={true} />
       </S.HeadingGRAHIC>
 
       <S.HeadingWrap1>
         <S.HeadingENGINEER style={{ fontStyle: 'oblique' }}>
-          <TextAppear text="ENGINEER" isActive={true} />
+          <TextAppear text="DEVELOPER" isActive={true} />
         </S.HeadingENGINEER>
         <S.SmallText1>
           AN IMAGINATIVE
